@@ -26,13 +26,13 @@ If you want to contribute from our repo:
 1. Fork this repository to your user.
 2. Clone your forked repository
 ```
-    git clone https://github.com/YOUR-USERNAME/fun-with-sfdx
+git clone https://github.com/YOUR-USERNAME/fun-with-sfdx
 ```
 3. From `master` create a new feature/* branch
 ```
-    git checkout master
-    git pull origin master
-    git checkout -b feature/awesome-lightning-component
+git checkout master
+git pull origin master
+git checkout -b feature/awesome-lightning-component
 ```
 4. Create your [Scratch Org](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs_create.htm) _(first check that you're already connected to your DevHub with sfdx-cli)_ 
 5. Push source code to your Scratch Org
