@@ -25,4 +25,4 @@ script:
 - sfdx force:source:push -u TestTempScratchOrg
 - sfdx force:apex:test:run -u TestTempScratchOrg --wait 10
 - sfdx force:org:delete -u TestTempScratchOrg -p
-- sfdx force:limits:api:display -u TestTempScratchOrg
+- sfdx force:limits:api:display -u HubOrg
