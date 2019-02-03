@@ -8,3 +8,4 @@ node_modules
 .classpath
 .vscode
 .tern-project
+OrgPreference.settings-meta.xml
