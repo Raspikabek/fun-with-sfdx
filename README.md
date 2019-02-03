@@ -1,20 +1,20 @@
 # Welcome to `Fun with SFDX` !
 The goal of this Project is build awesome Salesforce Apps and study new Salesforce tools and features. If you're interested and want to join us, please read the instructions below to work as one of us.
 
-You can collaborate with us by different ways:
-* Fork this repo and when finish your development create a PullRequest against `QA` branch
-* Ask to join as direct collaborator in this repo
+You can contribute with us by different ways:
+* Fork this repo and when finish your development create a Pull Request against `QA` branch
+* Ask to join as direct contributor in this repo
 * Create a new issue
 * Share this project
 
 ## Minimum Requirements to Develop in this project:
- * Use your own DevOrg with DevHub enabled
- * SFDX CLI installed and ready to use in your own DevOrg. All repo is in SFDX Source code
- * Git / Git Client
+ * Use your own DevOrg (create one from [here](https://developer.salesforce.com/signup)) with [DevHub enabled](https://help.salesforce.com/articleView?id=sfdx_setup_enable_devhub.htm&type=0)
+ * [SFDX CLI](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm) installed and ready to use in your own DevOrg. All repo is in sfdx source code
+ * Git + Optional Git Client (like [SourceTree](https://www.sourcetreeapp.com/), [GitKraken](https://www.gitkraken.com/) or [Github Desktop](https://desktop.github.com/))
  * A Github account
 
  ## Development workflow
-The following development workflow is similar to a real environment workflow. Why? Just because we want that all collaborators, with low or high experience, familiarize with this process.
+The following development workflow is similar to a real environment workflow. Why? Just because we want everyone, with low or high experience, familiarize with this process.
 
 ### Branch hierarchy:
     master    :final versions and accepted apps
@@ -22,7 +22,7 @@ The following development workflow is similar to a real environment workflow. Wh
     feature/* :development branches for each feature
 
 ### How do I start?
-If you want to collaborate from our repo:
+If you want to contribute from our repo:
 1. Fork this repository to your user.
 2. Clone your forked repository
 ```
