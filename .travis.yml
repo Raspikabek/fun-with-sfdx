@@ -7,6 +7,7 @@ branches:
   only:
     - master
     - QA
+    - /^feature.*$/
 before_install:
 - openssl aes-256-cbc -K $encrypted_63032c925c2f_key -iv $encrypted_63032c925c2f_iv
   -in assets/server.key.enc -out assets/server.key -d
@@ -28,7 +29,7 @@ jobs:
     stage:
 stages:
   - test:
-    if: branch = feature/*
+    if: branch = /^feature.*$/
     script:
     - sfdx force
   - qa
