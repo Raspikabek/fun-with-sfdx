@@ -24,15 +24,15 @@ before_install:
 - sfdx plugins --core
 - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key
   --username $USERNAME --setdefaultdevhubusername -a HubOrg
-jobs:
-  include:
-    stage:
 stages:
-  - test:
+  - name: test
     if: branch = /^feature.*$/
     script:
     - sfdx force
-  - qa
+  - name: qa
+    if: branch = QA
+    script:
+    - sfdx force:org:list
   - name: deploy
     if: branch = master
     script: 
