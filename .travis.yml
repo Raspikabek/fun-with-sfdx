@@ -26,12 +26,12 @@ before_install:
 jobs:
   include:
     - stage: "Tests"                # naming the Tests stage
-      name: "Unit Tests"            # names the first Tests stage job
-      script:
+    - script:
+      - sfdx force
+      name: "First Name"
+    - script:
         - sfdx --version
-      name: "Integration test"
-      script:
-        - sfdx force:org:list   
+      name: "Integration Tests"     # names the second Tests stage job
     - stage: deploy
       script:
         - sfdx force
