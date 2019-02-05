@@ -25,14 +25,13 @@ before_install:
   - sfdx plugins --core
 jobs:
   include:
-    - stage: test
-      name: "TEST 1"
+    - stage: "Tests"                # naming the Tests stage
+      name: "Unit Tests"            # names the first Tests stage job
       script:
         - sfdx --version
-        - sfdx force:auth:jwt:grant --clientid $TEST_CONSUMERKEY --jwtkeyfile assets/server.key --username $TEST_USER --setdefaultdevhubusername -a ProductionOrg
-      name: "TEST 2"
-      script:
-        - sfdx force:org:list
+    - script:
+        - sfdx force:org:list   
+      name: "Integration Tests"     # names the second Tests stage job
     - stage: deploy
       script:
         - sfdx force
