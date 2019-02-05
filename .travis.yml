@@ -1,6 +1,7 @@
 sudo: true
-os: trusty
+os: linux
 cache: false
+language: ruby
 env:
 - URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
 branches:
@@ -24,14 +25,12 @@ before_install:
   - sfdx plugins --core
 jobs:
   include:
-    stage: test
+    stage: "test"
     name: "Running Test Classes"
     script:
       - sfdx --version
-      - sfdx force:auth:jwt:grant --clientid $TEST_CONSUMERKEY --jwtkeyfile assets/server.key
-    --username $TEST_USER --setdefaultdevhubusername -a ProductionOrg
-    stage: deploy
+      - sfdx force:auth:jwt:grant --clientid $TEST_CONSUMERKEY --jwtkeyfile assets/server.key --username $TEST_USER --setdefaultdevhubusername -a ProductionOrg
+    stage: "deploy"
     script:
       - sfdx force
-      - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key
-    --username $PRODUCTION_USER --setdefaultdevhubusername -a ProductionOrg
+      - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key --username $PRODUCTION_USER --setdefaultdevhubusername -a ProductionOrg
