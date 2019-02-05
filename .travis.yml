@@ -26,10 +26,15 @@ before_install:
 jobs:
   include:
     - stage: test
+      name: "TEST 1"
       script:
         - sfdx --version
         - sfdx force:auth:jwt:grant --clientid $TEST_CONSUMERKEY --jwtkeyfile assets/server.key --username $TEST_USER --setdefaultdevhubusername -a ProductionOrg
+      name: "TEST 2"
+      script:
+        - sfdx force:org:list
     - stage: deploy
       script:
         - sfdx force
         - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key --username $PRODUCTION_USER --setdefaultdevhubusername -a ProductionOrg
+        - sfdx force:org:list
