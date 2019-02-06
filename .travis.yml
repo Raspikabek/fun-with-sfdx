@@ -37,6 +37,9 @@ jobs:
       - sfdx force:auth:jwt:grant --clientid $QA_CONSUMERKEY --jwtkeyfile assets/server.key --username $QA_USER --setdefaultdevhubusername -a QaOrg
       - sfdx --version
       - sfdx force:org:list
+      deploy:
+      - sfdx force
+      - sfdx force:org:list
       name: "Running Test in QA Environment"     # names the second Tests stage job
     - stage: deploy
       name: "Deploying"
