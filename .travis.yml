@@ -23,21 +23,24 @@ before_install:
   - export PATH=./sfdx/$(pwd):$PATH
   - sfdx --version
   - sfdx plugins --core
+
 jobs:
   include:
-    - stage: "Tests"                # naming the Tests stage
-      - sfdx force:auth:jwt:grant --clientid $TEST_CONSUMERKEY --jwtkeyfile assets/server.key --username $TEST_USER --setdefaultdevhubusername -a TestOrg
+    - stage: "Test"                # naming the Tests stage
+      name: "Unit Tests"            # names the first Tests stage job
+      script:
+      - sfdx --version
+      - sfdx force:auth:jwt:grant --clientid $TEST_CONSUMERKEY --jwtkeyfile assets/server.key --username $TEST_USER --setdefaultdevhubusername -a QaOrg
+      - sfdx --version
       - sfdx force:org:list
-      name: "Testing in Test Org."
-      script:
-      - sfdx force
     - script:
-        - sfdx force:auth:jwt:grant --clientid $QA_CONSUMERKEY --jwtkeyfile assets/server.key --username $QA_USER --setdefaultdevhubusername -a QaOrg
-        - sfdx --version
-        - sfdx force:org:list
-      name: "Running Tests against QA Org"     # names the second Tests stage job
+      - sfdx force:auth:jwt:grant --clientid $QA_CONSUMERKEY --jwtkeyfile assets/server.key --username $QA_USER --setdefaultdevhubusername -a QaOrg
+      - sfdx --version
+      - sfdx force:org:list
+      name: "QA test"     # names the second Tests stage job
     - stage: deploy
+      name: "Deployment"
       script:
-        - sfdx force
-        - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key --username $PRODUCTION_USER --setdefaultdevhubusername -a ProductionOrg
-        - sfdx force:org:list
+      - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key --username $PRODUCTION_USER --setdefaultdevhubusername -a QaOrg
+      - sfdx --version
+      - sfdx force:org:list
