@@ -37,11 +37,10 @@ jobs:
       - sfdx force:auth:jwt:grant --clientid $QA_CONSUMERKEY --jwtkeyfile assets/server.key --username $QA_USER --setdefaultdevhubusername -a QaOrg
       - sfdx --version
       - sfdx force:org:list
-      deploy:
-        - sfdx force
-        - sfdx force:org:list
       name: "Running Test in QA Environment"     # names the second Tests stage job
+      if: branch = QA
     - stage: deploy
+      if: branch = QA
       name: "Deploying"
       script:
       - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key --username $PRODUCTION_USER --setdefaultdevhubusername -a ProductionOrg
