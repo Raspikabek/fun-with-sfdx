@@ -29,6 +29,8 @@ jobs:
     - stage: "Test"                # naming the Tests stage
       name: "Running Tests in Test Environment"            # names the first Tests stage job
       script:
+      - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then sfdx force; fi'
+      - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then echo "hello world"; fi'
       - sfdx --version
       - sfdx force:auth:jwt:grant --clientid $TEST_CONSUMERKEY --jwtkeyfile assets/server.key --username $TEST_USER --setdefaultdevhubusername -a TestOrg
       - sfdx --version
