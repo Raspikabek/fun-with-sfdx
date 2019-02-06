@@ -40,7 +40,7 @@ jobs:
       deploy:
         - sfdx force
         - sfdx force:org:list
-        name: "Running Test in QA Environment"     # names the second Tests stage job
+      name: "Running Test in QA Environment"     # names the second Tests stage job
     - stage: deploy
       name: "Deploying"
       script:
