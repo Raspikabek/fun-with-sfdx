@@ -41,9 +41,8 @@ jobs:
       name: "Running Test in QA Environment"     # names the second Tests stage job
       if: branch = QA
     - stage: deploy
-      if: branch = QA
+      if: (branch IN (QA, master)) AND type = push
       name: "Deploying"
       script:
-      - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key --username $PRODUCTION_USER --setdefaultdevhubusername -a ProductionOrg
-      - sfdx --version
-      - sfdx force:org:list
+      - 'if ["$TRAVIS_BRANCH" = "master"]; then sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key --username $PRODUCTION_USER --setdefaultdevhubusername -a DevHubOrg ; fi'
+      - 'if ["$TRAVIS_BRANCH" = "QA"]; then sfdx force:auth:jwt:grant --clientid $QA_CONSUMERKEY --jwtkeyfile assets/server.key --username $QA_USER --setdefaultdevhubusername -a DevHubOrg ; fi'
