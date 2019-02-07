@@ -27,7 +27,7 @@ before_install:
 jobs:
   include:
     - stage: "Feature Test"
-      if: branch = /^feature.*$/
+      if: NOT (branch IN (master, QA))
       script:
       - sfdx force:auth:jwt:grant --clientid $TEST_CONSUMERKEY --jwtkeyfile assets/server.key --username $TEST_USER --setdefaultdevhubusername -a TestOrg
       - 'if [ $(sfdx force:source:convert -d temp_metadata/ -n CI_DEPLOY) = 0 ]; then sfdx force:mdapi:deploy -c -l RunLocalTests -d temp_metadata/ -u TestOrg -w 10; fi'
