@@ -46,3 +46,4 @@ jobs:
       script:
       - 'if ["$TRAVIS_BRANCH" = "master"]; then sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key --username $PRODUCTION_USER --setdefaultdevhubusername -a DevHubOrg ; fi'
       - 'if ["$TRAVIS_BRANCH" = "QA"]; then sfdx force:auth:jwt:grant --clientid $QA_CONSUMERKEY --jwtkeyfile assets/server.key --username $QA_USER --setdefaultdevhubusername -a DevHubOrg ; fi'
+      - sfdx force:source:convert -d temp_metadata/ -n CI_DEPLOY
