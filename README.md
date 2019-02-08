@@ -46,4 +46,4 @@ This final accion will execute a CI process against a DevOrg and run all Tests c
 
 You can check the pipeline process here:
 
-TODO: INSERT IMAGE HERE.
+TODO: INSERT IMAGE HERE--
