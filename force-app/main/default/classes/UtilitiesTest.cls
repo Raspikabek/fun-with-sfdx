@@ -16,5 +16,6 @@ private with sharing class UtilitiesTest {
         String sobject_name = Utilities.getSObjectNameById(test_account.Id);
 
         System.assertEquals('Account', sobject_name, 'Expecting Account SObject Type');
+        System.assertEquals('Account', sobject_name, 'Expecting Account SObject Type');
     }
 }
