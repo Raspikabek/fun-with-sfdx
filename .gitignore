@@ -8,3 +8,5 @@ node_modules
 .classpath
 .vscode
 .tern-project
+*.profile-meta.xml
+*.settings-meta.xml
