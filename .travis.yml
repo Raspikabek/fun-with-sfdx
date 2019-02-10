@@ -29,6 +29,16 @@ jobs:
     - stage: test
       if: NOT (branch IN (master, QA))
       script: bash assets/runTestAndDeploys.sh -e $TEST_CONSUMERKEY -u $TEST_USER -o TestOnly
+    - stage: "Test Pull Request"
+      if: branch IN (master, QA) AND (type = pull_request)
+      script: 
+      - 'if ["$TRAVIS_BRANCH" = "master"]; then bash assets/runTestAndDeploys.sh -e $CONSUMERKEY -u $PRODUCTION_USER -o TestOnly; fi'
+      - 'if ["$TRAVIS_BRANCH" = "QA"]; then bash assets/runTestAndDeploys.sh -e $QA_CONSUMERKEY -u $QA_USER -o TestOnly; fi'
+    - stage: deploy
+      if: branch IN (master, QA) AND (type = push)
+      script:
+      - 'if ["$TRAVIS_BRANCH" = "master"]; then bash assets/runTestAndDeploys.sh -e $CONSUMERKEY -u $PRODUCTION_USER -o Deploy; fi'
+      - 'if ["$TRAVIS_BRANCH" = "QA"]; then bash assets/runTestAndDeploys.sh -e $QA_CONSUMERKEY -u $QA_USER -o Deploy; fi'
     # - stage: "Feature Test"
     #   if: NOT (branch IN (master, QA))
     #   script:
