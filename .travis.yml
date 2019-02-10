@@ -39,7 +39,7 @@ jobs:
       script:
       - bash assets/runTestAndDeploys.sh -e $CONSUMERKEY -u $PRODUCTION_USER -o TestOnly
     - stage: "Deploy in QA"
-      if: (branch = QA AND (type = push)
+      if: (branch = QA) AND (type = push)
       script:
       - bash assets/runTestAndDeploys.sh -e $QA_CONSUMERKEY -u $QA_USER -o Deploy
     - stage: "Deploy in Production"
