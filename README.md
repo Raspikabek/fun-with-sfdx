@@ -13,7 +13,7 @@ You can contribute with us by different ways:
 ## Minimum Requirements to Develop in this project:
  * Use your own DevOrg (create one from [here](https://developer.salesforce.com/signup)) with [DevHub enabled](https://help.salesforce.com/articleView?id=sfdx_setup_enable_devhub.htm&type=0)
  * [SFDX CLI](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm) installed and ready to use in your own DevOrg. All repo is in sfdx source code
- * Git + Optional Git Client (like [SourceTree](https://www.sourcetreeapp.com/), [GitKraken](https://www.gitkraken.com/) or [Github Desktop](https://desktop.github.com/))
+ * Git + Optional Git Client (like [SourceTree](https://www.sourcetreeapp.com/), [GitKraken](https://www.gitkraken.com/invite/p1qno5xb) or [Github Desktop](https://desktop.github.com/))
  * A Github account
 
  ## Development workflow
