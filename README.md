@@ -1,3 +1,6 @@
+[![Production Build Status](https://travis-ci.org/Raspikabek/fun-with-sfdx.svg?branch=master)](https://travis-ci.org/Raspikabek/fun-with-sfdx)
+
+[![QA Build Status](https://travis-ci.org/Raspikabek/fun-with-sfdx.svg?branch=QA)](https://travis-ci.org/Raspikabek/fun-with-sfdx/branches)
 # Welcome to `Fun with SFDX` !
 The goal of this Project is build awesome Salesforce Apps and study new Salesforce tools and features. If you're interested and want to join us, please read the instructions below to work as one of us.
 
@@ -22,11 +25,15 @@ The following development workflow is similar to a real environment workflow. Wh
     feature/* :development branches for each feature
 
 ### How do I start?
-If you want to contribute from our repo:
-1. Fork this repository to your user.
-2. Clone your forked repository
+If you want to contribute:
+1. Fork this repository to your user (if you're not a contributor in the repo)
+2. Clone the repo (forked or this one)
 ```
 git clone https://github.com/YOUR-USERNAME/fun-with-sfdx
+```
+If you're a Contributor:
+```
+git clone https://github.com/Raspikabek/fun-with-sfdx
 ```
 3. From `master` create a new feature/* branch
 ```
@@ -40,10 +47,6 @@ git checkout -b feature/awesome-lightning-component
 
 Once finished you development create a Pull Request from your feature branch against `QA` branch. We will check the code and feature. Any issues or code reviews, push against your feature branch and we will see the new additions in the Pull Request.
 
-The Pull Request will create a Scratch Org for `QA` purpose, where we will test the feature and if everything is ok, the Pull Request will be accepted and merged into `QA`.
+The Pull Request will run a RunAllTests against our `QA` org. If the build success we will check the feature and functionality in a Scratch Org. If you want to create a Scratch Org with the Pull Request code, run the `createTestScratchOrg.sh` script.
 
-This final accion will execute a CI process against a DevOrg and run all Tests classes with `QA` content. If success, we will take care to create a new Pull Request and merge the content in `master`, deploying everything in the final DevOrg (our Dev Hub).
-
-You can check the pipeline process here:
-
-TODO : INSERT IMAGE HERE.
+When everything is ok we will merge the PR and a CI Proccess will deploy everything against `QA`. If success, we will take care to create a new Pull Request and merge the content in `master`, deploying everything in the final DevOrg (our Dev Hub).
