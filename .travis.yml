@@ -28,7 +28,7 @@ jobs:
   include:
     - stage: test
       if: NOT (branch IN (master, QA))
-      script: .assets/runTestAndDeploys.sh -e $TEST_CONSUMERKEY -u $TEST_USER -o TestOnly
+      script: bash assets/runTestAndDeploys.sh -e $TEST_CONSUMERKEY -u $TEST_USER -o TestOnly
     # - stage: "Feature Test"
     #   if: NOT (branch IN (master, QA))
     #   script:
