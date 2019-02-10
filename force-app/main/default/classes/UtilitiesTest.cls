@@ -5,16 +5,13 @@ private with sharing class UtilitiesTest {
         Account test_account = new Account(
             Name = 'Test Account'
         );
-
         insert test_account;
     }
 
-    @isTest
+    @isTest 
     private static void testGetSObjectNameById() {
         Account test_account = [SELECT Id FROM Account WHERE Name != NULL LIMIT 1];
-
         String sobject_name = Utilities.getSObjectNameById(test_account.Id);
-
         System.assertEquals('Account', sobject_name, 'Expecting Account SObject Type');
     }
 }
