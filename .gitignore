@@ -8,3 +8,7 @@ node_modules
 .classpath
 .vscode
 .tern-project
+# Ignoring Profiles
+*.profile-meta.xml
+# Ignore Org Preferences Settings
+OrgPreference.settings-meta.xml
