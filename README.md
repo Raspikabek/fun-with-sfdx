@@ -1,4 +1,4 @@
-[![Production Build Status](https://travis-ci.org/Raspikabek/fun-with-sfdx.svg?branch=master)](https://travis-ci.org/Raspikabek/fun-with-sfdx) : Productin
+[![Production Build Status](https://travis-ci.org/Raspikabek/fun-with-sfdx.svg?branch=master)](https://travis-ci.org/Raspikabek/fun-with-sfdx) : Production
 
 [![QA Build Status](https://travis-ci.org/Raspikabek/fun-with-sfdx.svg?branch=QA)](https://travis-ci.org/Raspikabek/fun-with-sfdx/branches) : QA
 # Welcome to `Fun with SFDX` !
