@@ -17,7 +17,7 @@ public without sharing class Utilities {
     public static String cutText(String text, Integer numChar){
         String converted = '';
         if(!String.isBlank(text)){
-            converted = (numChar == null || numChar >= text.lenght()) ? text : text.substring(0, numChar);
+            converted = (numChar == null || numChar >= text.length()) ? text : text.substring(0, numChar);
         }
         return converted;
     }
