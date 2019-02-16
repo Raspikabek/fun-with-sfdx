@@ -14,7 +14,7 @@ public without sharing class Utilities {
         return sobject_type_name;
     }
 
-    public static void deleteThisMethodPlease(){
+    /*public static void deleteThisMethodPlease(){
         Account new_account = new Account();
         new_account.Name = 'Sample Account';
         new_account.Type = 'Sample';
@@ -24,5 +24,5 @@ public without sharing class Utilities {
         new_account.BillingPostalCode = '12345';
         new_account.BillingState = 'Dublin';
         insert new_account;
-    }
+    }*/
 }
