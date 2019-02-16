@@ -14,14 +14,11 @@ private with sharing class UtilitiesTest {
         String sobject_name = Utilities.getSObjectNameById(test_account.Id);
         System.assertEquals('Account', sobject_name, 'Expecting Account SObject Type');
     }
-}
-@isTest
-private with sharing class UtilitiesTest {
     
-    @isTest
+    /*@isTest
     public static void testGetRecordTypes(){
         Test.startTest();
         Utilities.getRecordTypesFromSObject('Account');
         Test.stopTest();
-    }
+    }*/
 }
