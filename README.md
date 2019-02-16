@@ -1,6 +1,5 @@
-[![Production Build Status](https://travis-ci.org/Raspikabek/fun-with-sfdx.svg?branch=master)](https://travis-ci.org/Raspikabek/fun-with-sfdx) : Production
+# Welcome to `Fun with SFDX` ! [![Production Build Status](https://travis-ci.org/Raspikabek/fun-with-sfdx.svg?branch=master)](https://travis-ci.org/Raspikabek/fun-with-sfdx)
 
-# Welcome to `Fun with SFDX` !
 The goal of this Project is build awesome Salesforce Apps and study new Salesforce tools and features. If you're interested and want to join us, please read the instructions below to work as one of us.
 
 You can contribute with us by different ways:
