@@ -18,7 +18,8 @@ private with sharing class UtilitiesTest {
     @isTest
     public static void testGetRecordTypes(){
         Test.startTest();
-        System.assertEquals(0, Utilities.getRecordTypesFromSObject('Account').size());
+        Map<Id, RecordType> soy_un_mapa_de_recordtypes_por_id = new Map<Id, RecordType>([SELECT Id FROM RecordType WHERE SObjectType = 'Account']);
+        System.assertEquals(soy_un_mapa_de_recordtypes_por_id.size(), Utilities.getRecordTypesFromSObject('Account').size());
         Test.stopTest();
     }
 }

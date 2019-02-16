@@ -16,10 +16,10 @@ public without sharing class Utilities {
 
     
     public static Map<String, Id> getRecordTypesFromSObject(String sobject_type){
-        Map<String, Id> mRecordTypes_developerName_id = new Map<String, Id>();
+        Map<String, Id> m_recordTypes_developerName_id = new Map<String, Id>();
         for (RecordType rt : [SELECT Id, Developername FROM RecordType WHERE SObjectType = :sobject_type]) {
-           mRecordTypes_developerName_id.put(rt.DeveloperName, rt.Id);
+           m_recordTypes_developerName_id.put(rt.DeveloperName, rt.Id);
         }
-        return mRecordTypes_developerName_id;
+        return m_recordTypes_developerName_id;
     }
 }
