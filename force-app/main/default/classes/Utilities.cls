@@ -13,4 +13,12 @@ public without sharing class Utilities {
         }
         return sobject_type_name;
     }
+
+    public static String cutText(String text, Integer numChar){
+        String converted = '';
+        if(!String.isBlank(text)){
+            converted = (numChar == null || numChar >= text.size()) ? text : text.substring(0, numChar);
+        }
+        return converted;
+    }
 }
