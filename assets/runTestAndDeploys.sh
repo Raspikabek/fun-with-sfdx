@@ -12,7 +12,7 @@ sfdx force:auth:jwt:grant --clientid $ENVIRONMENT --jwtkeyfile assets/server.key
 sfdx force:source:convert -d temp_metadata/ -n Travis_CI_Package
 if [ "$OPERATION" = "TestOnly" ]; then
     echo "Running Validation against" $ENVIRONMENT
-    sfdx force:mdapi:deploy -c -l RunLocalTests -d temp_metadata/ -u DevHub -w 10)
+    sfdx force:mdapi:deploy -c -l RunLocalTests -d temp_metadata/ -u DevHub -w 10
     rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
 fi
 if [ "$OPERATION" = "Deploy" ]; then
