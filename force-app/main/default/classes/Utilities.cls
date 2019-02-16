@@ -15,11 +15,11 @@ public without sharing class Utilities {
     }
 
     
-    public static Map<String, Id> getRecordTypesFromSObject(String so){
-        Map<String, Id> mRecordTypes = new Map<String, Id>();
-        for (RecordType rt : [SELECT Id, Developername FROM RecordType WHERE SObjectType = :so]) {
-           mRecordTypes.put(rt.DeveloperName, rt.Id);
+    public static Map<String, Id> getRecordTypesFromSObject(String sobject_type){
+        Map<String, Id> mRecordTypes_developerName_id = new Map<String, Id>();
+        for (RecordType rt : [SELECT Id, Developername FROM RecordType WHERE SObjectType = :sobject_type]) {
+           mRecordTypes_developerName_id.put(rt.DeveloperName, rt.Id);
         }
-        return mRecordTypes;
+        return mRecordTypes_developerName_id;
     }
 }

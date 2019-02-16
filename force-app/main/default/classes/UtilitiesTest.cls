@@ -18,7 +18,7 @@ private with sharing class UtilitiesTest {
     @isTest
     public static void testGetRecordTypes(){
         Test.startTest();
-        Utilities.getRecordTypesFromSObject('Account');
+        System.assertEquals(0, Utilities.getRecordTypesFromSObject('Account').size());
         Test.stopTest();
     }
 }
