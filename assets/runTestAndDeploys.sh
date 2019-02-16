@@ -14,7 +14,8 @@ if [ "$OPERATION" = "TestOnly" ]; then
     echo "Running Validation against" $ENVIRONMENT
     OUTPUT="$(sfdx force:mdapi:deploy -c -l RunLocalTests -d temp_metadata/ -u DevHub -w 10)"
     echo "${OUTPUT}"
-    if [[ "$OUTPUT" == *"ERROR"* ]]; then
+    if [[ $OUTPUT == *"ERROR"* ]]; then
+        echo "Im IN!"
         exit 1
     fi
 fi
