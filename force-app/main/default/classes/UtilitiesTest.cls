@@ -16,9 +16,9 @@ private with sharing class UtilitiesTest {
     }
 
     @isTest
-    private static void testCutText(){
-        String myText = '1234567890';
-        String returned = Utilities.cutText(myText, 5);
+    private static void testGetCuttedString(){
+        String my_string = '1234567890';
+        String returned = Utilities.getCuttedString(my_string, 5);
         System.assertEquals('12345', returned);
     }
 }

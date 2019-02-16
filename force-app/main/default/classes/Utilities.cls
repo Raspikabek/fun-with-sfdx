@@ -14,11 +14,7 @@ public without sharing class Utilities {
         return sobject_type_name;
     }
 
-    public static String cutText(String text, Integer numChar){
-        String converted = '';
-        if(!String.isBlank(text)){
-            converted = (numChar == null || numChar >= text.length()) ? text : text.substring(0, numChar);
-        }
-        return converted;
+    public static String getCuttedString(String my_string, Integer max_length){
+        return (String.isBlank(my_string) || max_length == null || max_length >= text.length()) my_string : my_string.substring(0, max_length);
     }
 }
