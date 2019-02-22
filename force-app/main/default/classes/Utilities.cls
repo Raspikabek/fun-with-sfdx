@@ -14,12 +14,15 @@ public without sharing class Utilities {
         return sobject_type_name;
     }
 
-    
     public static Map<String, Id> getRecordTypesFromSObject(String sobject_type){
         Map<String, Id> m_recordTypes_developerName_id = new Map<String, Id>();
         for (RecordType rt : [SELECT Id, Developername FROM RecordType WHERE SObjectType = :sobject_type]) {
            m_recordTypes_developerName_id.put(rt.DeveloperName, rt.Id);
         }
         return m_recordTypes_developerName_id;
+    }
+
+    public static String getCuttedString(String my_string, Integer max_length){
+        return (String.isBlank(my_string) || max_length == null || max_length >= my_string.length()) ? my_string : my_string.substring(0, max_length);
     }
 }
