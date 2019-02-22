@@ -13,4 +13,8 @@ public without sharing class Utilities {
         }
         return sobject_type_name;
     }
+
+    public static String getCuttedString(String my_string, Integer max_length){
+        return (String.isBlank(my_string) || max_length == null || max_length >= my_string.length()) ? my_string : my_string.substring(0, max_length);
+    }
 }

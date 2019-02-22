@@ -14,4 +14,11 @@ private with sharing class UtilitiesTest {
         String sobject_name = Utilities.getSObjectNameById(test_account.Id);
         System.assertEquals('Account', sobject_name, 'Expecting Account SObject Type');
     }
+
+    @isTest
+    private static void testGetCuttedString(){
+        String my_string = '1234567890';
+        String returned = Utilities.getCuttedString(my_string, 5);
+        System.assertEquals('12345', returned);
+    }
 }
